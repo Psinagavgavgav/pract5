@@ -26,6 +26,6 @@
 - Выводит информацию о файлах и процессе работы
 - Обрабатывает пользовательский ввод
 
-<img width="884" height="945" alt="Image" src="https://github.com/user-attachments/assets/f66f18ed-c7c7-441c-8c42-5874935ff915" />
+<img width="548" height="351" alt="Image" src="https://github.com/user-attachments/assets/39328534-a09a-4049-888f-48c00fb5f44e" />
 
-<img width="1004" height="758" alt="Image" src="https://github.com/user-attachments/assets/f3f2fd51-4879-45c4-a9e9-b962eb1b79e7" />
+<img width="547" height="253" alt="Image" src="https://github.com/user-attachments/assets/faee3612-73af-4fb6-a66e-a8da08fdfe91" />
