@@ -77,6 +77,22 @@ int main() {
     }
     cout << "Водяной знак: " << watermarkPath << endl;
 
+    ifstream host(hostPath, ios::binary | ios::ate);
+    ifstream wm(watermarkPath, ios::binary | ios::ate);
+
+    if (!host || !wm) {
+        cout << "Ошибка открытия файлов!" << endl;
+        system("pause");
+        return 0;
+    }
+
+    size_t hostSize = host.tellg();
+    size_t wmSize = wm.tellg();
+
+    cout << "\nИнформация о файлах:" << endl;
+    cout << "   Основной файл: " << hostSize << " байт" << endl;
+    cout << "   Водяной знак: " << wmSize << " байт" << endl;
+
     // Создаем имя для выходного файла
     string outputPath = "watermarked_" + hostPath.substr(hostPath.find_last_of("\\") + 1);
 
@@ -85,7 +101,19 @@ int main() {
     // Встраиваем водяной знак
     embedWatermarkToFile(hostPath, watermarkPath, outputPath);
 
-    cout << "Водяной знак успешно добавлен в файл: " << outputPath << endl;
+    // Проверяем результат
+    ifstream result(outputPath, ios::binary | ios::ate);
+    if (result) {
+        size_t resultSize = result.tellg();
+        cout << "Результирующий файл: " << outputPath << endl;
+        cout << "Размер: " << resultSize << " байт" << endl;
+        cout << "Водяной знак успешно добавлен!" << endl;
+    }
+    else {
+        cout << "Ошибка создания результата!" << endl;
+    }
+
+    cout << "\nДля извлечения водяного знака используйте программу извлечения." << endl;
     cout << "Нажмите любую клавишу для выхода..." << endl;
     system("pause");
     return 0;
