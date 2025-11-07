@@ -34,6 +34,7 @@ bool copyFile(const string& from, const string& to) {
     return true;
 }
 
+
 void embedWatermarkToFile(const string& hostFile, const string& watermarkFile, const string& outputFile) {
     if (!copyFile(hostFile, outputFile)) {
         cout << "Ошибка копирования файла!" << endl;
